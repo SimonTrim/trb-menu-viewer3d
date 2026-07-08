@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Contextuel 3D — Trimble Connect</title>
+    <link rel="stylesheet" href="/modus-web-components/modus-icons.css" />
+    <link rel="stylesheet" href="/src/ui/styles.css" />
+  </head>
+  <body>
+    <main id="app" class="app-shell">
+      <modus-wc-card class="panel-card" padding="comfortable">
+        <header class="panel-header">
+          <modus-wc-typography hierarchy="h3" label="Menu contextuel"></modus-wc-typography>
+          <modus-wc-typography
+            hierarchy="p"
+            label="Clic droit sur un objet du modèle 3D, touche Menu ou bouton ci-dessous."
+          ></modus-wc-typography>
+        </header>
+
+        <div id="offline-alert" hidden>
+          <modus-wc-alert variant="info" alert-title="Mode développement">
+            Ouvrez cette extension depuis Trimble Connect Viewer 3D pour activer le menu sur la sélection.
+          </modus-wc-alert>
+        </div>
+
+        <div id="selection-info" class="selection-info" hidden>
+          <modus-wc-chip id="selection-count" type="counter" size="sm" label="0 objet(s)"></modus-wc-chip>
+          <modus-wc-typography id="selection-name" hierarchy="p" label="Nom : —"></modus-wc-typography>
+          <modus-wc-typography id="selection-type" hierarchy="p" label="Type IFC : —"></modus-wc-typography>
+        </div>
+
+        <modus-wc-button
+          id="open-menu-btn"
+          color="primary"
+          size="md"
+          full-width="true"
+          disabled
+        >
+          <modus-wc-icon slot="prefix" name="menu" size="sm" decorative></modus-wc-icon>
+          Ouvrir le menu contextuel
+        </modus-wc-button>
+
+        <div id="context-menu-root"></div>
+      </modus-wc-card>
+    </main>
+
+    <div id="toast-host"></div>
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "trb-menu-viewer3d",
+  "version": "1.0.0",
+  "description": "Menu contextuel EveBIM-like pour Trimble Connect Viewer 3D",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/generate-manifest.mjs && tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@trimble-oss/moduswebcomponents": "^1.9.1",
+    "trimble-connect-workspace-api": "^0.3.34"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0"
+  }
+}

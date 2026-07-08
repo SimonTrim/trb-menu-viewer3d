@@ -1,0 +1,146 @@
+@import '@trimble-oss/moduswebcomponents/modus-wc-styles.css';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  --menu-bg: var(--modus-wc-color-white, #ffffff);
+  --menu-border: var(--modus-wc-color-gray-4, #cbcdd6);
+  --menu-text: var(--modus-wc-color-gray-10, #171c1e);
+  --menu-hover-bg: var(--modus-wc-color-blue-dark, #0063a3);
+  --menu-hover-text: var(--modus-wc-color-white, #ffffff);
+  --menu-disabled: var(--modus-wc-color-gray-6, #7d808d);
+  --menu-separator: var(--modus-wc-color-gray-2, #e0e1e9);
+  --menu-shadow: 0 2px 8px rgba(23, 28, 30, 0.18);
+  --font-ui: 'Open Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--menu-text);
+  background: var(--modus-wc-color-trimble-blue-pale, #f3f6f9);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 8px;
+}
+
+.panel-card {
+  width: 100%;
+  min-width: 280px;
+}
+
+.panel-header {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+#offline-alert {
+  margin-bottom: 12px;
+}
+
+.selection-info {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: var(--modus-wc-color-gray-0, #f8f9fa);
+  border: 1px solid var(--modus-wc-color-gray-2, #e0e1e9);
+  border-radius: 4px;
+}
+
+#open-menu-btn {
+  margin-bottom: 12px;
+}
+
+#context-menu-root {
+  position: relative;
+  min-height: 120px;
+}
+
+/* Menu contextuel hiérarchique — tokens Modus, structure EveBIM */
+.context-menu {
+  display: inline-block;
+  min-width: 220px;
+  background: var(--menu-bg);
+  border: 1px solid var(--menu-border);
+  border-radius: 2px;
+  box-shadow: var(--menu-shadow);
+  padding: 2px 0;
+  z-index: 10000;
+  user-select: none;
+}
+
+.context-menu--submenu {
+  position: fixed;
+}
+
+.context-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 24px 6px 28px;
+  cursor: default;
+  white-space: nowrap;
+  position: relative;
+  line-height: 1.4;
+  font-size: 13px;
+}
+
+.context-menu__item:hover,
+.context-menu__item--active,
+.context-menu__item:focus {
+  background: var(--menu-hover-bg);
+  color: var(--menu-hover-text);
+  outline: none;
+}
+
+.context-menu__item--disabled {
+  color: var(--menu-disabled);
+  pointer-events: none;
+}
+
+.context-menu__label {
+  flex: 1;
+}
+
+.context-menu__shortcut {
+  margin-left: auto;
+  padding-left: 16px;
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.context-menu__arrow {
+  position: absolute;
+  right: 8px;
+  font-size: 9px;
+}
+
+.context-menu__separator {
+  height: 1px;
+  margin: 3px 2px;
+  background: var(--menu-separator);
+}
+
+.toast-host {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+}
+
+.toast-host__item {
+  pointer-events: auto;
+}
