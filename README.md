@@ -72,7 +72,7 @@ L'interface du panneau utilise **Modus WC 2.0** (`@trimble-oss/moduswebcomponent
 trb-menu-viewer3D/
 ├── public/
 │   ├── manifest.json      # Manifest extension Viewer 3D
-│   └── icon-48.svg
+│   └── icon-48.png
 ├── src/
 │   ├── index.ts           # Point d'entrée, connexion Workspace API
 │   ├── types.ts

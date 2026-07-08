@@ -23,7 +23,7 @@ const base = resolveBaseUrl().replace(/\/$/, '');
 const manifest = {
   url: `${base}/index.html`,
   title: 'Menu Contextuel 3D',
-  icon: `${base}/icon-48.svg`,
+  icon: `${base}/icon-48.png`,
   infoUrl: `${base}/index.html`,
   description:
     "Menu contextuel inspiré d'EveBIM — sélection, navigation, visibilité et propriétés",
