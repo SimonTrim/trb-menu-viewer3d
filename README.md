@@ -45,12 +45,20 @@ Le serveur démarre sur `http://localhost:5173`.
 
 ### 3. Production (Vercel)
 
-**URL manifest production :** `https://trb-menu-viewer3d.vercel.app/manifest.json`
+#### URLs à connaître
+
+| Rôle | URL production |
+|------|----------------|
+| **Manifest** (seule URL à coller dans TC) | `https://trb-menu-viewer3d.vercel.app/manifest.json` |
+| **Extension** (panneau latéral gauche Viewer 3D) | `https://trb-menu-viewer3d.vercel.app/index.html` |
+| **Icône** (barre latérale gauche Viewer 3D) | `https://trb-menu-viewer3d.vercel.app/icon-48.png` |
+
+> Dans Trimble Connect, vous ne collez que l'**URL du manifest**. L'icône et l'URL de l'extension sont lues automatiquement depuis le manifest (`extensions[0].icon` et `extensions[0].url`).
 
 1. Ouvrir un projet Trimble Connect → **Viewer 3D**
 2. **Paramètres → Extensions → Ajouter une extension personnalisée**
 3. Coller l'URL du manifest : `https://trb-menu-viewer3d.vercel.app/manifest.json`
-4. Activer l'extension **Menu Contextuel 3D**
+4. Activer l'extension **Menu Contextuel 3D** — l'icône apparaît dans le panneau latéral gauche
 
 Le manifest est généré automatiquement au build via `scripts/generate-manifest.mjs` (variable `VERCEL_URL` sur Vercel, `localhost` en local).
 

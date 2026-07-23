@@ -21,12 +21,21 @@ function resolveBaseUrl() {
 const base = resolveBaseUrl().replace(/\/$/, '');
 
 const manifest = {
-  url: `${base}/index.html`,
-  title: 'Menu Contextuel 3D',
-  icon: `${base}/icon-48.png`,
-  infoUrl: `${base}/index.html`,
-  description:
-    "Menu contextuel inspiré d'EveBIM — sélection, navigation, visibilité et propriétés",
+  name: 'Menu Contextuel 3D',
+  version: '1.0.0',
+  api: '1.0',
+  extensions: [
+    {
+      type: 'viewerModule',
+      id: 'trb-menu-viewer3d',
+      title: 'Menu Contextuel 3D',
+      icon: `${base}/icon-48.png`,
+      url: `${base}/index.html`,
+      description:
+        "Menu contextuel inspiré d'EveBIM — sélection, navigation, visibilité et propriétés",
+    },
+  ],
+  permissions: ['project.read', 'files.read', 'views.read'],
 };
 
 mkdirSync(publicDir, { recursive: true });
